@@ -1,0 +1,1 @@
+ Display_output(scored_marks, marks_average_for_student, read, rows, cols);
