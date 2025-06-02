@@ -1,0 +1,37 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+void writeinfile(ofstream &f,char filename[],int arr[],int s)
+{
+	for (int i = 0; i < s; i++)
+	{
+		f << arr[i] << " ";
+	}
+}
+int readfromfile(char filename[], int arr[])
+{
+	ifstream f;
+	f.open(filename);
+	int i = 0;
+	while (!f.eof()){
+		f >> arr[i];
+		i++;
+	}
+	f.close();
+	return i;
+}
+int main()
+{
+	ofstream fout;
+	int ar[] = { 1, 2, 4, 5, 6, 2 };
+	int size = sizeof(ar) / sizeof(ar[0]);
+	writeinfile(fout,"file.txt",ar, size);
+	int s = readfromfile("file.txt", ar);
+	for (int i = 0; i < s-1; i++)
+	{
+		cout << ar[i] << " ";
+	}
+	fout.close();
+	system("pause");
+	return 0;
+}

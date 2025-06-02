@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+char convert(char&, int);
+//char convert(const char&,int);
+
+char convert(char &ch,int a)
+{
+	ch = ch + 32;
+	a = ch;
+	cout << "ASCII: " << a;
+	return ch;
+}
+//char convert(const char &ch, int a)
+//{
+//	a = ch;
+//	cout << "ASCII: " << a;
+//	return ch;
+//}
+
+int main()
+{
+	/*char c;
+	cin >> c;
+	cout<<endl<<convert(c,0);*/
+	/*int a = 10;
+	int &b = a;
+	b = 20;
+	cout << a;*/
+	char c;
+	cin >> c;
+	cout << endl << convert(c, 0);
+	cout << endl << c;
+	system("pause");
+	return 0;
+}

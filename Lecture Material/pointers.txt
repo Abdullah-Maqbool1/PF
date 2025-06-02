@@ -1,0 +1,84 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	//static pointer
+	char b = 'a';
+	char* a = &b;
+	cout << sizeof(b)<<" "<<sizeof(a);
+	cout << a;
+	cout << endl << b;
+	cout << endl << &a;
+	cout << endl << &b;
+	cout << endl << *a;
+	*a = 5;
+	cout << endl << b;
+	(*a)++;
+	cout << endl << b;
+	cout << endl << ++(*a);
+	cout << endl << b;
+
+	//dynamic pointer
+	int* p = new int;
+	*p = 10;
+	cout << endl<<*p;
+	cout << endl << p;
+	cout << endl << &p;
+	delete p;
+}
+
+
+void pointfunc(int*,int*);
+int main()
+{
+	int ar[] = { 1,2,3,4,5,6 };
+	//for (int i = 0; i < 6; i++)
+	//{
+	//	cout << *(ar + i)<<" "; //ar[i]
+	//}
+	int* p = ar;
+	cout << endl; cout << *p;
+	p = p + 2;
+	cout << endl;  cout << *p;
+	p--;
+	cout << endl;cout << *p;
+	p + 1;
+	cout << endl;cout << *p;
+	cout << endl;cout << *(p+3);
+	cout << endl;cout << p+2;
+	*p = (*p)+2;
+	//for (int i = 0; i < 6; i++)
+	//{
+	//	cout << p[i] << " "; //*(p+i)
+	//}
+	/*int a = 10;
+	int* b = new int;
+	*b = 5;
+	pointfunc(&a,b);*/
+	////static pointer
+	//char b = 'a';
+	//char* a = &b;
+	//cout << sizeof(b)<<" "<<sizeof(a);
+	//cout << a;
+	//cout << endl << b;
+	//cout << endl << &a;
+	//cout << endl << &b;
+	//cout << endl << *a;
+	//*a = 5;
+	//cout << endl << b;
+	//(*a)++;
+	//cout << endl << b;
+	//cout << endl << ++(*a);
+	//cout << endl << b;
+	////dynamic pointer
+	//int* p = new int;
+	//*p = 10;
+	//cout << endl<<*p;
+	//cout << endl << p;
+	//cout << endl << &p;
+	//delete p;
+}
+void pointfunc(int* p,int* p2)
+{
+	cout << (*p) + (*p2);
+}
